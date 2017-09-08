@@ -1,0 +1,15 @@
+.playgame {
+    width: 250px;
+    height: 250px;
+    background: dimgray;
+    margin-left: auto;
+    margin-top: -30px;
+    
+    
+}
+
+.playgame p {
+    color : navajowhite;
+
+}
+
