@@ -1,0 +1,30 @@
+.vaardigheden
+{
+  width: 600px;
+  height: 300px;
+  background-color: white;
+
+
+
+}
+
+
+.skill_up
+{
+  background-color: gray;
+
+}
+
+#html_data
+{
+  width: 100%;
+  background-color: #ddd;
+}
+
+
+#html_data_bar
+{
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
