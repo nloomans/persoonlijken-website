@@ -43,7 +43,7 @@
       <li><a href="/index.html">Home</a></li>
       <li><a href="/wie ben ik/index.html">Wie ben ik</a></li>
       <li><a href="/creaties/index.html">Mijn creaties</a></li>
-      <li class="active"><a href="#">mij contacteren</a></li>
+      <li class="active"><a href="/contacteren/index.php">mij contacteren</a></li>
     </ul>
   </div>
 </nav>
@@ -53,9 +53,9 @@
 
 <center>
 
-    <form action="server/server.php">
+    <form method="POST">
        <p>Naam</p>
-        <input type="text" name="text" size="100" id="naam" placeholder="type je naam"/>
+        <input type="text" name="naam" size="100" id="naam" placeholder="type je naam"/>
         <p>Email optioneel</p>
         <input type="text" name="email" size="100" id="email" placeholder="type je e-mail"/>
         <p>Vraag</p>
@@ -66,6 +66,59 @@
 
 </center>
 
+
+    <?php
+
+//variable
+$naam = $_POST["naam"];
+$email = $_POST["email"];
+$vraag = $_POST["vraag"];
+
+
+//connecteer the database
+$host = "localhost";
+$user = "zeg ik niet";
+$pass = "hier moet een wachtwoord in";
+$db = "forum";
+$port = 3306;
+
+
+$conn = mysqli_connect($host,$user,$pass,$db,$port);
+
+$sql = "INSERT INTO gegevens (naam, email, vraag) VALUES('$naam', '$email', '$vraag')";
+
+$resultaat = mysqli_query($conn,$sql);
+
+
+if (empty($naam))
+{
+  echo "<script>alert('u heeft uw naam vergeten')</script>";
+}elseif (empty($email)) {
+  echo "<script>alert('u heeft uw email vergeten')</script>";
+}elseif (empty($email)) {
+  echo "<script>alert('u heeft uw email vergeten')</script>";
+}
+else
+{
+
+if (!mysqli_query($conn,$sql))
+{
+ echo "Er zijn geen gegevens verstuurd de fout is: '$sql' ";
+}
+else
+{
+ echo 'gegevens zijn succes vol verstuurd';
+}
+
+}
+
+
+
+
+
+$verbreken = mysqli_close($conn);
+
+?>
 
 
 
