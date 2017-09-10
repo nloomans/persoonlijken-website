@@ -1,0 +1,19 @@
+.vaardigheden
+{
+  width: 600px;
+  height: 300px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+
+.skill_up
+{
+  background-color: gray;
+
+}
+
+#myBar {
+  height: 30px;
+  background-color: red;
+}
